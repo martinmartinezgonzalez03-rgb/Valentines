@@ -49,9 +49,10 @@
 </head>
 <body>
 
-  <h1 id="question">Do you want to be my Valentine? 💖</h1>
+  <h1 id="question">Do you "Maria Kapodistria" wanna be my Valentines? 💖</h1>
 
-  <img id="image" src="https://media.giphy.com/media/l0MYB8Ory7Hqefo9a/giphy.gif" alt="cute">
+  <!-- FOTO INICIAL -->
+  <img id="image" src="foto ia.png" alt="cute">
 
   <div class="buttons">
     <button id="yesBtn" onclick="yesClicked()">YES ❤️</button>
@@ -64,27 +65,51 @@
       "Please? 🥺",
       "Stop playing 😭",
       "Come on 😩",
-      "Last chance 😤"
+      "Oh you think u are funny?",
+      "Right I dont even want it anymore",
+      "I was joking",
+      "Or not",
+      "ok stop it now malaka",
+      "ha - ha",
+      "U are so coooool",
+      "Nevermind go find someone else",
+      "Last chance 😤",
+      "Last chance for real",
+      "For real last chance for real",
+      "for real real the last real",
+      "What?",
+      "At least click yes to see how the photo changes...",
+      "DO ITTTT"
     ];
 
     let noCount = 0;
     let yesSize = 20;
 
+    // 👉 NUEVO: controla que la foto del NO solo cambie una vez
+    let noImageChanged = false;
+
     function noClicked() {
+      // Cambiar texto del botón NO
       if (noCount < noTexts.length) {
         document.getElementById("noBtn").innerText = noTexts[noCount];
-        noCount++;
       }
 
-      yesSize += 10;
+      // 👉 NUEVO: cambiar la foto SOLO en el primer NO
+      if (!noImageChanged) {
+        document.getElementById("image").src = "maria princesa.png";
+        noImageChanged = true;
+      }
+
+      noCount++;
+
+      // Hacer el botón YES más grande
+      yesSize += 15;
       document.getElementById("yesBtn").style.fontSize = yesSize + "px";
     }
 
     function yesClicked() {
-      document.getElementById("question").innerText = "ELAAAAAA 💖🥰";
-      document.getElementById("image").src =
-        "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif";
-
+      document.getElementById("question").innerText = "ELAAAAAA I GOT YOUU 💖🥰";
+      document.getElementById("image").src = "foto risa.png";
       document.querySelector(".buttons").style.display = "none";
     }
   </script>
