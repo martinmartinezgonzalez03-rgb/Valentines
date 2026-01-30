@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💘</title>
+  <style>
+    body {
+      background-color: #ffe6ea;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #ff4d6d;
+    }
+
+    img {
+      width: 250px;
+      margin: 20px 0;
+      border-radius: 20px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #999;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="question">Do you want to be my Valentine? 💖</h1>
+
+  <img id="image" src="https://media.giphy.com/media/l0MYB8Ory7Hqefo9a/giphy.gif" alt="cute">
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClicked()">YES ❤️</button>
+    <button id="noBtn" onclick="noClicked()">NO 💔</button>
+  </div>
+
+  <script>
+    let noTexts = [
+      "Are you sure? 😳",
+      "Please? 🥺",
+      "Stop playing 😭",
+      "Come on 😩",
+      "Last chance 😤"
+    ];
+
+    let noCount = 0;
+    let yesSize = 20;
+
+    function noClicked() {
+      if (noCount < noTexts.length) {
+        document.getElementById("noBtn").innerText = noTexts[noCount];
+        noCount++;
+      }
+
+      yesSize += 10;
+      document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+    }
+
+    function yesClicked() {
+      document.getElementById("question").innerText = "ELAAAAAA 💖🥰";
+      document.getElementById("image").src =
+        "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif";
+
+      document.querySelector(".buttons").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
